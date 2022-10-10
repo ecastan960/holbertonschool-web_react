@@ -1,10 +1,24 @@
-function component() {
-  const element = document.createElement('div');
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App/App';
+import reportWebVitals from './reportWebVitals';
+import Notifications from './Notifications/Notifications';
 
-  // Lodash, currently included via a script, is required for this line to work
-  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
 
-  return element;
-}
+const rootNotifications = ReactDOM.createRoot(document.getElementById('root-notifications'));
+rootNotifications.render(
+  <React.StrictMode>
+    <Notifications />
+  </React.StrictMode>
+);
 
-document.body.appendChild(component());
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();

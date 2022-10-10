@@ -23,6 +23,11 @@ module.exports = {
         type: 'asset/resource',
         loader: 'image-webpack-loader',
       },
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader',
+      },
     ]
   },
 };
