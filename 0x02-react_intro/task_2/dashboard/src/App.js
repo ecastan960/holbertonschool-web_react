@@ -18,7 +18,7 @@ function App() {
           <input type="email" id="email"></input>
           <label htmlFor="password">Password:</label>
           <input type="password" id="password"></input>
-          <button>OK</button>
+          <button style={{ background: 'white', border: '1px solid gray', borderRadius: '5px' }}>OK</button>
         </div>
       </div>
       <div className="App-footer">
