@@ -1,4 +1,6 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   mode: 'development',
@@ -10,8 +12,17 @@ module.exports = {
   },
   devServer: {
     hot: true,
-    contentBase: path.resolve(__dirname, 'dist'),
+    static: {
+      directory: path.join(__dirname, "dist")
+    },
   },
+  plugins: [
+    new CleanWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      template: './dist/index.html',
+      title: 'Holberton Dashboard',
+    }),
+  ],
   module: {
     rules: [
       {
